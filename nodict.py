@@ -17,9 +17,8 @@ class Node:
 
     def __repr__(self):
         """
-        The Node class should print a human-readable representation of its key/value contents when asked. The `__repr__` method can do this. 
+        The Node class should print a human-readable representation of its key/value contents when asked. The `__repr__` method can do this.
         """
-        # Your code here
         return f'{self.__class__.__name__}({self.key}, {self.value})'
 
     def __eq__(self, other):
@@ -55,7 +54,7 @@ class NoDict:
 
     def get(self, key):
         """
-        This class method should perform a key-lookup in the `NoDict` class. It should accept just one parameter: The key to look up. If the key is found in the `NoDict` class, return its associated value. If the key is not found, raise a `KeyError` exception.
+        This class method should perform a key-lookup in the `NoDict` class. It should accept just one parameter: The key to look up. If the key is found in the `NoDict` class, return its associated value. If the key is not found, raise a `KeyError` exceptiondatetime A combination of a date and a time. Attributes: ()
         """
         key_val = Node(key)
         bucket = self.buckets[key_val.hash % self.size]
@@ -66,13 +65,13 @@ class NoDict:
 
     def __getitem__(self, key):
         """"
-        Implement this magic "dunder" method within the `NoDict` class to enable square-bracket _reading_ behavior. This will make the class behave more like a regular dictionary. Without enabling this behavior, you could not write an expression like this:
+        Implement this magic "dunder" method within the `NoDict` class to enable square-bracket _reading_ behavior. 
         """
         value = self.get(key)
         return value
 
     def __setitem__(self, key, value):
         """
-        Implement this magic "dunder" method within the `NoDict` class to enable square-bracket _assignment_ behavior. Think of it like a setter method.  After enabling this behavior, you will be able to do this:
+        Implement this magic "dunder" method within the `NoDict` class to enable square-bracket _assignment_ behavior. Think of it like a setter method.
         """
         self.add(key, value)
